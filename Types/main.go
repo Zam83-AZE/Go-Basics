@@ -38,5 +38,94 @@ func main(){
 
     
   */
+
+  var i =1
+  const f="%T(%v)\n"
+  fmt.Printf(f,i,i)
+
+  /*
+    TYPE CONVERSION
+    The expression T(v) converts the value v to the type T.Some numeric conversions.
+
+  */
+
+  var i1=1
+  var j1=float32(i1)
+  println(j1)
+
+
+  /*
+    TYPE ASSERTION
+     If you have value and you want to convert it to another or specific type(in case of interface{}) you can use type assertion. A type assertion takes a value and tries create another version  in the specified explicity type
+
+     https://stackoverflow.com/questions/38816843/explain-type-assertions-in-go
+
+     https://marcofranssen.nl/go-interfaces-and-type-assertions
+  */
+
+  type Person struct{
+    name string
+    age int
+    address string
+  }
     
+    x:= Person{}
+
+    println(x.name)
+
+
+    var k int
+    var h int
+    _ =h
+    fmt.Print("Enter key: ")
+    fmt.Scanf("%d",&k)
+
+    if d:=1;k==1{
+    
+      fmt.Println("ok")
+    } else {
+      fmt.Println(d)
+      
+    }
+    fmt.Println(k)
+
+
+    for i:=1;i<5;i++{
+      println(i)
+    }
+    var g,y=1,2
+    swap(&g,&y)
+    fmt.Println(g,y)
+
+    odd,even:=oddeven("13578")
+    fmt.Println(odd,even)  
+
+
+    fmt.Println(ssum(3,2,3))
+   
+}
+
+func swap(a,b *int){
+  *a,*b=*b,*a
+}
+
+func oddeven(value string) (int,int){
+  odd,even:=0,0
+  for _,e:=range value{
+    if e%2==0{
+      odd++
+    } else {
+      even++
+    }
+  }
+  return odd,even
+}
+
+
+func ssum(nums...int) int {
+  b:=0
+  for _,a:=range nums{
+    b=b+a
+  }
+  return b
 }
